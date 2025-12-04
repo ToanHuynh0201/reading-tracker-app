@@ -1,18 +1,21 @@
 import Typo from "@/src/components/common/typo";
+import ScreenWrapper from "@/src/components/layout/screenWrapper";
+import { useTheme } from "@/src/hooks/useTheme";
 import { StyleSheet, View } from "react-native";
 
 export default function HomeScreen() {
+	const { theme, themeMode, toggleTheme } = useTheme();
 	return (
-		<View style={styles.container}>
-			<Typo>Hello</Typo>
-		</View>
+		<ScreenWrapper>
+			<View style={styles.container}>
+				<Typo color={theme.textSecondary}>Hello</Typo>
+			</View>
+		</ScreenWrapper>
 	);
 }
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: "center",
-		alignItems: "center",
 	},
 });

@@ -1,14 +1,32 @@
+import { useTheme } from "@/src/hooks/useTheme";
+import { ScreenWrapperProps } from "@/src/types/layoutComponents";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-const screenWrapper = () => {
+const ScreenWrapper = ({
+	edges = ["top", "bottom"],
+	backgroundColor: background,
+	style,
+	children,
+}: ScreenWrapperProps) => {
+	const { theme } = useTheme();
+	const backgroundColor = background ? background : theme.background;
 	return (
-		<View>
-			<Text>screenWrapper</Text>
-		</View>
+		<SafeAreaView
+			style={[styles.container, style, { backgroundColor }]}
+			edges={edges}>
+			{children}
+		</SafeAreaView>
 	);
 };
 
-export default screenWrapper;
+export default ScreenWrapper;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		borderWidth: 1,
+		borderColor: "red",
+	},
+});
