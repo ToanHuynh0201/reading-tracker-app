@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
+import Typo from "@/src/components/common/typo";
+import { StyleSheet, View } from "react-native";
 
 export default function HomeScreen() {
 	return (
 		<View style={styles.container}>
-			<Text>Hello Home Screen</Text>
+			<Typo>Hello</Typo>
 		</View>
 	);
 }
