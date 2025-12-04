@@ -3,32 +3,29 @@ import ScreenWrapper from "@/src/components/layout/screenWrapper";
 import { useTheme } from "@/src/hooks/useTheme";
 import { StyleSheet, View } from "react-native";
 
-export default function HomeScreen() {
+export default function StatsScreen() {
 	const { theme } = useTheme();
 	return (
 		<ScreenWrapper>
 			<View style={styles.container}>
-				<Typo
-					fontSize={28}
-					fontWeight="700"
-					color={theme.textPrimary}>
-					🏠 Dashboard
+				<Typo fontSize={28} fontWeight="700" color={theme.textPrimary}>
+					📊 Statistics
 				</Typo>
 				<View style={styles.content}>
 					<Typo color={theme.textSecondary}>
-						Home / Dashboard section
+						Statistics / Insights section
 					</Typo>
 					<Typo color={theme.textSecondary}>
-						• Currently reading books
+						• Reading progress and goals
 					</Typo>
 					<Typo color={theme.textSecondary}>
-						• Recent reading sessions
+						• Charts and analytics
 					</Typo>
 					<Typo color={theme.textSecondary}>
-						• Quick stats overview
+						• Reading streaks
 					</Typo>
 					<Typo color={theme.textSecondary}>
-						• Reading goals progress
+						• Time spent reading
 					</Typo>
 				</View>
 			</View>

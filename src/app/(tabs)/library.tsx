@@ -3,32 +3,26 @@ import ScreenWrapper from "@/src/components/layout/screenWrapper";
 import { useTheme } from "@/src/hooks/useTheme";
 import { StyleSheet, View } from "react-native";
 
-export default function HomeScreen() {
+export default function LibraryScreen() {
 	const { theme } = useTheme();
 	return (
 		<ScreenWrapper>
 			<View style={styles.container}>
-				<Typo
-					fontSize={28}
-					fontWeight="700"
-					color={theme.textPrimary}>
-					🏠 Dashboard
+				<Typo fontSize={28} fontWeight="700" color={theme.textPrimary}>
+					📘 Library
 				</Typo>
 				<View style={styles.content}>
 					<Typo color={theme.textSecondary}>
-						Home / Dashboard section
+						Book List / Library section
 					</Typo>
 					<Typo color={theme.textSecondary}>
-						• Currently reading books
+						• View all your books
 					</Typo>
 					<Typo color={theme.textSecondary}>
-						• Recent reading sessions
+						• Filter and search books
 					</Typo>
 					<Typo color={theme.textSecondary}>
-						• Quick stats overview
-					</Typo>
-					<Typo color={theme.textSecondary}>
-						• Reading goals progress
+						• Add new books
 					</Typo>
 				</View>
 			</View>
